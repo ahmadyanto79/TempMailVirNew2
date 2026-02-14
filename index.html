@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempMail Identity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="mobile-wrapper">
+        <header class="main-header">
+            <h1 class="logo">TempMail</h1>
+            <div class="profile-pic">
+                <img src="https://i.pravatar.cc/150?u=temp" alt="User">
+            </div>
+        </header>
+
+        <main>
+            <section id="home" class="tab-content active">
+                <div class="hero-card">
+                    <span class="shield-icon"></span>
+                    <h2>Temp Identity</h2>
+                    <p style="color: var(--text-grey); font-size: 14px;">Gunakan email ini untuk verifikasi tanpa mengorbankan privasi utama Anda.</p>
+                </div>
+
+                <div class="email-box-card">
+                    <label>EMAIL KAMU SAAT INI</label>
+                    <div class="email-display">
+                        <span id="email-text">Memproses...</span>
+                        <button class="copy-btn" onclick="copyEmail()"></button>
+                    </div>
+                    <div class="status-refresh">
+                        <span class="dot"></span> Auto-refresh: 5s
+                    </div>
+                </div>
+            </section>
+
+            <section id="inbox" class="tab-content">
+                <h2 style="margin-left: 10px;">Riwayat Inbox</h2>
+                <div id="read-list" class="empty-state">
+                    <span class="empty-icon"></span>
+                    <p>Belum ada pesan terbaca.</p>
+                </div>
+            </section>
+
+            <section id="updates" class="tab-content">
+                <h2 style="margin-left: 10px;">Update Baru</h2>
+                <div id="unread-messages-list">
+                    <div class="empty-state">
+                        <span class="empty-icon"></span>
+                        <p>Menunggu pesan masuk...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="docs" class="tab-content">
+                <h2 style="margin-left: 10px;">Dokumentasi</h2>
+                <div class="docs-card">
+                    <h3>Cara Penggunaan</h3>
+                    <ul style="text-align: left; font-size: 13px; color: var(--text-grey); line-height: 1.8;">
+                        <li>Klik tombol <b>+</b> untuk ganti email baru.</li>
+                        <li>Klik ikon  untuk menyalin alamat.</li>
+                        <li>Pantau tab <b>Updates</b> untuk kode OTP/Link.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <button class="fab" onclick="generateEmail()">+</button>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="switchTab('home', this)">
+                <span class="nav-icon"></span><span class="nav-label">Home</span>
+            </div>
+            <div class="nav-item" onclick="switchTab('inbox', this)">
+                <span class="nav-icon"></span><span class="nav-label">Inbox</span>
+            </div>
+            <div class="nav-item" onclick="switchTab('updates', this)">
+                <span class="nav-icon"></span><span class="nav-label">Updates</span>
+            </div>
+            <div class="nav-item" onclick="switchTab('docs', this)">
+                <span class="nav-icon"></span><span class="nav-label">Docs</span>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
